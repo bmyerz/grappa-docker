@@ -57,4 +57,6 @@ rm -rf openmpi-1.8.1* ruby-2.1.2*
 # add a non-root user to make MPI feel safe
 echo "Creating user 'grappa' for you to log in with"
 sudo adduser grappa
-echo "You can be the user with 'su grappa'
+echo "You can be the user with 'su grappa'"
+
+echo 'export PATH=$HOME/cmake-3.5.1-Linux-x86_64/bin:$PATH' >>/home/grappa/.bashrc
