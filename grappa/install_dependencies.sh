@@ -32,7 +32,7 @@ update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
 # build recent version of Ruby
 cd /root
-wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz && \
+wget --no-check-certificate http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz && \
   tar xzf ruby-2.1.2.tar.gz && \
   cd ruby-2.1.2 && \
   ./configure && \
@@ -42,7 +42,7 @@ wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz && \
 
 # build OpenMPI
 cd /root
-wget http://www.open-mpi.org/software/ompi/v1.8/downloads/openmpi-1.8.1.tar.gz && \
+wget --no-check-certificate http://www.open-mpi.org/software/ompi/v1.8/downloads/openmpi-1.8.1.tar.gz && \
   tar xzf openmpi-1.8.1.tar.gz && \
   cd openmpi-1.8.1 && \
   CC=$(which gcc) CXX=$(which g++) ./configure --enable-contrib-no-build=vt --prefix=/usr && \
