@@ -2,7 +2,7 @@
 
 apt-get update
 apt-get install -y \
-  libboost1.55-all-dev \
+  libboost1.48-all-dev \
   wget \
   make \
   ninja-build \
@@ -12,6 +12,7 @@ apt-get install -y \
   man \
   openssl
   
+  #libboost1.55-all-dev \
 #cmake \
 
 # cmake 3.12+
