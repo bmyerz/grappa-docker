@@ -42,9 +42,9 @@ wget --no-check-certificate http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.t
 
 # build OpenMPI
 cd /root
-wget --no-check-certificate http://www.open-mpi.org/software/ompi/v1.8/downloads/openmpi-1.8.1.tar.gz && \
-  tar xzf openmpi-1.8.1.tar.gz && \
-  cd openmpi-1.8.1 && \
+wget --no-check-certificate https://www.open-mpi.org/software/ompi/v1.8/downloads/openmpi-1.8.8.tar.gz && \
+  tar xzf openmpi-1.8.8.tar.gz && \
+  cd openmpi-1.8.8 && \
   CC=$(which gcc) CXX=$(which g++) ./configure --enable-contrib-no-build=vt --prefix=/usr && \
   make && \
   make install
@@ -52,11 +52,5 @@ wget --no-check-certificate http://www.open-mpi.org/software/ompi/v1.8/downloads
 cd /root
 
 # clean up
-rm -rf openmpi-1.8.1* ruby-2.1.2*
+rm -rf openmpi-1.8.8* ruby-2.1.2*
 
-# add a non-root user to make MPI feel safe
-echo "Creating user 'grappa' for you to log in with"
-sudo adduser grappa
-echo "You can be the user with 'su grappa'"
-
-echo 'export PATH=$HOME/cmake-3.5.1-Linux-x86_64/bin:$PATH' >>/home/grappa/.bashrc
