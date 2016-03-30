@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 apt-get update
 apt-get install -y \
   libboost1.48-all-dev \
@@ -19,15 +21,15 @@ apt-get install -y \
 cd /root
 wget --no-check-certificate https://cmake.org/files/v3.5/cmake-3.5.1-Linux-x86_64.sh && \
    chmod +x cmake-3.5.1-Linux-x86_64.sh && \
-   ./cmake-3.5.1-Linux-x86_64.sh
+   ./cmake-3.5.1-Linux-x86_64.sh --prefix=/usr/local --skip-license
 
 # install gcc 4.8
-apt-get install python-software-properties
+apt-get install -y python-software-properties
 add-apt-repository ppa:ubuntu-toolchain-r/test
 apt-get update
-apt-get install gcc-4.8
+apt-get install -y gcc-4.8
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
-apt-get install g++-4.8
+apt-get install -y g++-4.8
 update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
 # build recent version of Ruby
